@@ -1,0 +1,32 @@
+##image: maven:3.6.3-jdk-81111111111111
+#image: maven:latest
+#variables:
+#  SONAR_TOKEN: "347d6a92b9429aab0c0085cf36542f43bc836a72"
+#  SONAR_HOST_URL: "http://192.168.0.206:9111"
+#  SONAR_PROJECTKEY: "yhzg"
+#  GIT_DEPTH: 0
+#sonarqube-check:
+#  script:
+##    - mvn verify sonar:sonar -Dsonar.qualitygate.wait=true
+#    - mvn sonar:sonar \
+#      -Dsonar.projectKey=yhzg \
+#      -Dsonar.host.url=http://192.168.0.206:9111 \
+#      -Dsonar.login=347d6a92b9429aab0c0085cf36542f43bc836a72 \
+#  allow_failure: true
+#  only:
+#    - master
+image: maven:3.6.3-jdk-8
+
+stages:
+  - scanner
+
+example-sonar:
+  stage: scanner
+  script:
+#    - mvn clean verify
+#    - mvn package11111
+    - mvn sonar:sonar '-Dsonar.projectKey=ceshi' '-Dsonar.login=1172a5bf818506a635b32bab2b94dbf69d17c81f' '-Dsonar.host.url=http://192.168.0.110:9111'
+#      -Dsonar.analysis.mode=preview #设置后，sonar不创建项目，只做分析11111111111111111111111111111111111111111111111111111111111111111111
+  allow_failure: true
+  only:
+    - master
