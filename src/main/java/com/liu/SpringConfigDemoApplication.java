@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.liu.*")
+@MapperScan("com.liu.dao,mybatis.mapper")
 public class SpringConfigDemoApplication {
 
     public static void main(String[] args) {

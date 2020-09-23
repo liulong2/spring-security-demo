@@ -2,7 +2,8 @@ package com.liu.dao.mybatis.controller;
 
 
 import com.liu.dao.mybatis.entity.UserEntity;
-import com.liu.dao.mybatis.service.UserService;
+import com.liu.dao.mybatis.service.UserEntityService;
+import com.liu.dao.mybatis.service.impl.UserEntityServiceImpl;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/user/entity")
 public class UserController {
     @Autowired
-    private UserService userentityService;
+    private UserEntityService userentityService;
 
     @PostMapping
     public String processRegistratration(UserEntity userEntity) {

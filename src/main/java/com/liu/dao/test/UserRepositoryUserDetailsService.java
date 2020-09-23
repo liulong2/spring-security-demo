@@ -1,7 +1,8 @@
 package com.liu.dao.test;
 
 import com.liu.dao.mybatis.entity.UserEntity;
-import com.liu.dao.mybatis.service.UserService;
+import com.liu.dao.mybatis.service.UserEntityService;
+import com.liu.dao.mybatis.service.impl.UserEntityServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,7 +13,7 @@ import org.springframework.util.StringUtils;
 @Service
 public class UserRepositoryUserDetailsService implements UserDetailsService {
     @Autowired
-    private UserService userService;
+    private UserEntityService userService;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

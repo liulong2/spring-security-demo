@@ -11,7 +11,7 @@ import com.liu.dao.mybatis.entity.UserEntity;
  * @author liu
  * @since 2020-09-23
  */
-public interface UserService extends IService<UserEntity> {
+public interface UserEntityService extends IService<UserEntity> {
     UserEntity findByUserName(String username);
 
     void processRegistratration(UserEntity userEntity);

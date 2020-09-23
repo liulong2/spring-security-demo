@@ -3,8 +3,9 @@ package com.liu.dao.mybatis.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liu.dao.mybatis.entity.UserEntity;
 import com.liu.dao.mybatis.mapper.UserDAO;
-import com.liu.dao.mybatis.service.UserService;
+import com.liu.dao.mybatis.service.UserEntityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +18,8 @@ import org.springframework.stereotype.Service;
  * @since 2020-09-23
  */
 @Service
-public class UserServiceImpl extends ServiceImpl<UserDAO, UserEntity> implements UserService {
+@Primary
+public class UserEntityServiceImpl extends ServiceImpl<UserDAO, UserEntity> implements UserEntityService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
