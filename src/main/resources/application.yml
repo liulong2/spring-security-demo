@@ -3,6 +3,9 @@ server:
   servlet:
     context-path: /liu
 spring:
+  profiles:
+    active:
+      - prod
   datasource:
     url: jdbc:mysql://localhost:3306/security?characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
     username: root
@@ -15,11 +18,21 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: auto
-      #      ±íÇ°×º
+      #      è¡¨å‰ç¼€
       #      tablePrefix: t_
-      #      Âß¼­É¾³ıÖµ
-      logic-delete-field: dataStatus  #È«¾ÖÂß¼­É¾³ı×Ö¶ÎÖµ 3.3.0¿ªÊ¼Ö§³Ö£¬ÏêÇé¿´ÏÂÃæ¡£
-      logic-delete-value: 1 # Âß¼­ÒÑÉ¾³ıÖµ(Ä¬ÈÏÎª 1)
-      logic-not-delete-value: 0 # Âß¼­Î´É¾³ıÖµ(Ä¬ÈÏÎª 0)
-#      ×Ô¶¯Ë¢ĞÂmapper.xml µ«ÊÇĞèÒªÌí¼ÓÅäÖÃÎÄ¼ş
+      #      é€»è¾‘åˆ é™¤å€¼
+      logic-delete-field: dataStatus  #å…¨å±€é€»è¾‘åˆ é™¤å­—æ®µå€¼ 3.3.0å¼€å§‹æ”¯æŒï¼Œè¯¦æƒ…çœ‹ä¸‹é¢ã€‚
+      logic-delete-value: 1 # é€»è¾‘å·²åˆ é™¤å€¼(é»˜è®¤ä¸º 1)
+      logic-not-delete-value: 0 # é€»è¾‘æœªåˆ é™¤å€¼(é»˜è®¤ä¸º 0)
+#      è‡ªåŠ¨åˆ·æ–°mapper.xml ä½†æ˜¯éœ€è¦æ·»åŠ é…ç½®æ–‡ä»¶
+taco:
+  order:
+    page-size: 10
+logging:
+  level:
+#    root: info
+    tacos: warn
+  file:
+    path: ./log
+
 #      refresh-mapper: true

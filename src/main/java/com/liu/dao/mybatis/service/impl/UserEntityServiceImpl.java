@@ -1,5 +1,6 @@
 package com.liu.dao.mybatis.service.impl;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liu.dao.mybatis.entity.UserEntity;
 import com.liu.dao.mybatis.mapper.UserDAO;
@@ -35,4 +36,5 @@ public class UserEntityServiceImpl extends ServiceImpl<UserDAO, UserEntity> impl
         userEntity.setPassword(passwordEncoder.encode(userEntity.getPassword()));
         save(userEntity);
     }
+
 }
