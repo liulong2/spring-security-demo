@@ -1,0 +1,79 @@
+2020-09-24 21:03:21.296 ERROR 2324 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'logging.level' to java.util.Map<java.lang.String, org.springframework.boot.logging.LogLevel>
+	at org.springframework.boot.context.properties.bind.Binder.handleBindError(Binder.java:363) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:323) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:308) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:238) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:212) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.setLogLevels(LoggingApplicationListener.java:364) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeFinalLoggingLevels(LoggingApplicationListener.java:331) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:282) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345) [spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) [spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) [spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at com.liu.SpringConfigDemoApplication.main(SpringConfigDemoApplication.java:12) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+Caused by: org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [java.lang.String] to type [java.util.Map<java.lang.String, org.springframework.boot.logging.LogLevel>]
+	at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:321) ~[spring-core-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.core.convert.support.GenericConversionService.convert(GenericConversionService.java:194) ~[spring-core-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.boot.context.properties.bind.BindConverter$CompositeConversionService.convert(BindConverter.java:170) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.context.properties.bind.BindConverter.convert(BindConverter.java:96) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.context.properties.bind.BindConverter.convert(BindConverter.java:88) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.context.properties.bind.MapBinder.bindAggregate(MapBinder.java:64) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.context.properties.bind.AggregateBinder.bind(AggregateBinder.java:56) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.lambda$bindAggregate$3(Binder.java:414) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder$Context.withIncreasedDepth(Binder.java:571) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder$Context.access$100(Binder.java:512) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.bindAggregate(Binder.java:414) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.bindObject(Binder.java:375) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:319) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	... 24 common frames omitted
+
+2020-09-24 21:03:52.636  INFO 6920 --- [restartedMain] com.liu.SpringConfigDemoApplication      : Starting SpringConfigDemoApplication on DESKTOP-E146GQ6 with PID 6920 (H:\liu\spring-config-demo\target\classes started by 刘梦龙22 in H:\liu\spring-config-demo)
+2020-09-24 21:03:52.645  INFO 6920 --- [restartedMain] com.liu.SpringConfigDemoApplication      : No active profile set, falling back to default profiles: default
+2020-09-24 21:03:52.757  INFO 6920 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-24 21:03:52.758  INFO 6920 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-24 21:03:54.448  INFO 6920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2020-09-24 21:03:54.460  INFO 6920 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-24 21:03:54.460  INFO 6920 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-09-24 21:03:54.600  INFO 6920 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/liu]    : Initializing Spring embedded WebApplicationContext
+2020-09-24 21:03:54.601  INFO 6920 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1842 ms
+2020-09-24 21:03:54.759  INFO 6920 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-09-24 21:03:54.939  INFO 6920 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-09-24 21:03:57.338  INFO 6920 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1b60fa15, org.springframework.security.web.context.SecurityContextPersistenceFilter@411759b8, org.springframework.security.web.header.HeaderWriterFilter@54fc7345, org.springframework.security.web.csrf.CsrfFilter@54c61b63, org.springframework.security.web.authentication.logout.LogoutFilter@45e89a8e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2bc1434d, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@34bdb306, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@7bce07ed, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@70fbfaf5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@47b6e6fb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@68177474, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f2fd865, org.springframework.security.web.session.SessionManagementFilter@7ce20fef, org.springframework.security.web.access.ExceptionTranslationFilter@2cceb382, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@701c6db3]
+2020-09-24 21:03:57.459  INFO 6920 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-24 21:03:57.693  INFO 6920 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-09-24 21:03:57.752  INFO 6920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path '/liu'
+2020-09-24 21:03:57.770  INFO 6920 --- [restartedMain] com.liu.SpringConfigDemoApplication      : Started SpringConfigDemoApplication in 5.9 seconds (JVM running for 8.009)
+2020-09-24 21:07:23.659  INFO 6920 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-24 21:07:23.661  INFO 6920 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-09-24 21:07:28.352  INFO 12456 --- [restartedMain] com.liu.SpringConfigDemoApplication      : Starting SpringConfigDemoApplication on DESKTOP-E146GQ6 with PID 12456 (H:\liu\spring-config-demo\target\classes started by 刘梦龙22 in H:\liu\spring-config-demo)
+2020-09-24 21:07:28.359  INFO 12456 --- [restartedMain] com.liu.SpringConfigDemoApplication      : No active profile set, falling back to default profiles: default
+2020-09-24 21:07:28.445  INFO 12456 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-24 21:07:28.445  INFO 12456 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-24 21:07:30.119  INFO 12456 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2020-09-24 21:07:30.130  INFO 12456 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-24 21:07:30.131  INFO 12456 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-09-24 21:07:30.272  INFO 12456 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/liu]    : Initializing Spring embedded WebApplicationContext
+2020-09-24 21:07:30.272  INFO 12456 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1827 ms
+2020-09-24 21:07:30.426  INFO 12456 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-09-24 21:07:30.603  INFO 12456 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-09-24 21:07:33.006  INFO 12456 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@462240a8, org.springframework.security.web.context.SecurityContextPersistenceFilter@542c6184, org.springframework.security.web.header.HeaderWriterFilter@2ea68e27, org.springframework.security.web.csrf.CsrfFilter@3ff898be, org.springframework.security.web.authentication.logout.LogoutFilter@57be0e54, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2749eeec, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@73900b8b, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6a11650f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@77a227fc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7907d93e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e6403ae, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@17877e7e, org.springframework.security.web.session.SessionManagementFilter@2a5310f5, org.springframework.security.web.access.ExceptionTranslationFilter@151e4203, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@885a427]
+2020-09-24 21:07:33.128  INFO 12456 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-24 21:07:33.377  INFO 12456 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-09-24 21:07:33.441  INFO 12456 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path '/liu'
+2020-09-24 21:07:33.455  INFO 12456 --- [restartedMain] com.liu.SpringConfigDemoApplication      : Started SpringConfigDemoApplication in 5.797 seconds (JVM running for 7.907)
